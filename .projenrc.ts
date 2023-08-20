@@ -7,7 +7,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   jsiiVersion: '~5.0.0',
   name: 'entest-cdk-chatbot',
   projenrcTs: true,
-  repositoryUrl: 'https://github.com/hai/entest-cdk-chatbot.git',
+  repositoryUrl: 'https://github.com/entest-hai/entest-cdk-chatbot.git',
   peerDeps: ['aws-cdk-lib', 'constructs'],
   publishToPypi: {
     distName: 'entest-cdk-chatbot',
