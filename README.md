@@ -59,3 +59,5 @@ npx cdk --app lib/integ.default.js diff
 ## Reference
 
 - [example lambda](https://github.com/seeebiii/projen-test/blob/main/.projenrc.js)
+
+- [aws-delivlib](https://betterdev.blog/building-cdk-construct-library/)

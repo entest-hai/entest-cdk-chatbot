@@ -16,7 +16,7 @@ npx projen new awscdk-construct
 
 Update the .projenrc.ts with dependencies
 
-```json
+```ts
 import { awscdk } from 'projen';
 const project = new awscdk.AwsCdkConstructLibrary({
   author: 'haitran',
@@ -56,6 +56,12 @@ Deploy
 npx cdk --app lib/integ.default.js diff
 ```
 
+## Reference
+
+- [example lambda](https://github.com/seeebiii/projen-test/blob/main/.projenrc.js)
+
+- [aws-delivlib](https://betterdev.blog/building-cdk-construct-library/)
+
 # API Reference <a name="API Reference" id="api-reference"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
@@ -72,7 +78,7 @@ new QueueRecorder(scope: Construct, id: string, props: QueueRecorderProps)
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#entest-cdk-chatbot.QueueRecorder.Initializer.parameter.scope">scope</a></code> | <code>@aws-cdk/core.Construct</code> | *No description.* |
+| <code><a href="#entest-cdk-chatbot.QueueRecorder.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
 | <code><a href="#entest-cdk-chatbot.QueueRecorder.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#entest-cdk-chatbot.QueueRecorder.Initializer.parameter.props">props</a></code> | <code><a href="#entest-cdk-chatbot.QueueRecorderProps">QueueRecorderProps</a></code> | *No description.* |
 
@@ -80,7 +86,7 @@ new QueueRecorder(scope: Construct, id: string, props: QueueRecorderProps)
 
 ##### `scope`<sup>Required</sup> <a name="scope" id="entest-cdk-chatbot.QueueRecorder.Initializer.parameter.scope"></a>
 
-- *Type:* @aws-cdk/core.Construct
+- *Type:* constructs.Construct
 
 ---
 
@@ -116,11 +122,11 @@ Returns a string representation of this construct.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#entest-cdk-chatbot.QueueRecorder.isConstruct">isConstruct</a></code> | Return whether the given object is a Construct. |
+| <code><a href="#entest-cdk-chatbot.QueueRecorder.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### `isConstruct` <a name="isConstruct" id="entest-cdk-chatbot.QueueRecorder.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="entest-cdk-chatbot.QueueRecorder.isConstruct"></a>
 
 ```typescript
 import { QueueRecorder } from 'entest-cdk-chatbot'
@@ -128,11 +134,13 @@ import { QueueRecorder } from 'entest-cdk-chatbot'
 QueueRecorder.isConstruct(x: any)
 ```
 
-Return whether the given object is a Construct.
+Checks if `x` is a construct.
 
 ###### `x`<sup>Required</sup> <a name="x" id="entest-cdk-chatbot.QueueRecorder.isConstruct.parameter.x"></a>
 
 - *Type:* any
+
+Any object.
 
 ---
 
@@ -140,19 +148,19 @@ Return whether the given object is a Construct.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#entest-cdk-chatbot.QueueRecorder.property.node">node</a></code> | <code>@aws-cdk/core.ConstructNode</code> | The construct tree node associated with this construct. |
+| <code><a href="#entest-cdk-chatbot.QueueRecorder.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
 
 ---
 
 ##### `node`<sup>Required</sup> <a name="node" id="entest-cdk-chatbot.QueueRecorder.property.node"></a>
 
 ```typescript
-public readonly node: ConstructNode;
+public readonly node: Node;
 ```
 
-- *Type:* @aws-cdk/core.ConstructNode
+- *Type:* constructs.Node
 
-The construct tree node associated with this construct.
+The tree node.
 
 ---
 
