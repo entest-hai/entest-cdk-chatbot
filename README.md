@@ -55,3 +55,7 @@ Deploy
 ```bash
 npx cdk --app lib/integ.default.js diff
 ```
+
+## Reference
+
+- [example lambda](https://github.com/seeebiii/projen-test/blob/main/.projenrc.js)
