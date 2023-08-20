@@ -16,7 +16,7 @@ npx projen new awscdk-construct
 
 Update the .projenrc.ts with dependencies
 
-```json
+```ts
 import { awscdk } from 'projen';
 const project = new awscdk.AwsCdkConstructLibrary({
   author: 'haitran',
