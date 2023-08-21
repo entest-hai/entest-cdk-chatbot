@@ -17,7 +17,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/d2db49e7a98156494f747aa444a6ee3e4b3633d128b49a892c50d2664c255e15.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/8f2b3b9934a09efd94d91c78a6cddd6802c76504fd9157bcb4695a5e76ffc8c5.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -33,16 +33,16 @@
         "projen-stack-demo.assets"
       ],
       "metadata": {
-        "/projen-stack-demo/QueueRecorder/HelloLamdaFunctionDemo/ServiceRole/Resource": [
+        "/projen-stack-demo/CognitoAuthorizer/UserPoolDemo/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "QueueRecorderHelloLamdaFunctionDemoServiceRole3C30EE94"
+            "data": "CognitoAuthorizerUserPoolDemo39ACD195"
           }
         ],
-        "/projen-stack-demo/QueueRecorder/HelloLamdaFunctionDemo/Resource": [
+        "/projen-stack-demo/CognitoAuthorizer/UserPoolDemo/WebClient/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "QueueRecorderHelloLamdaFunctionDemo342781F3"
+            "data": "CognitoAuthorizerUserPoolDemoWebClient726DF61D"
           }
         ],
         "/projen-stack-demo/CDKMetadata/Default": [

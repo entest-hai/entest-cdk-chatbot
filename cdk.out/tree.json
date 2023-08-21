@@ -8,128 +8,113 @@
         "id": "projen-stack-demo",
         "path": "projen-stack-demo",
         "children": {
-          "QueueRecorder": {
-            "id": "QueueRecorder",
-            "path": "projen-stack-demo/QueueRecorder",
+          "CognitoAuthorizer": {
+            "id": "CognitoAuthorizer",
+            "path": "projen-stack-demo/CognitoAuthorizer",
             "children": {
-              "HelloLamdaFunctionDemo": {
-                "id": "HelloLamdaFunctionDemo",
-                "path": "projen-stack-demo/QueueRecorder/HelloLamdaFunctionDemo",
+              "UserPoolDemo": {
+                "id": "UserPoolDemo",
+                "path": "projen-stack-demo/CognitoAuthorizer/UserPoolDemo",
                 "children": {
-                  "ServiceRole": {
-                    "id": "ServiceRole",
-                    "path": "projen-stack-demo/QueueRecorder/HelloLamdaFunctionDemo/ServiceRole",
-                    "children": {
-                      "ImportServiceRole": {
-                        "id": "ImportServiceRole",
-                        "path": "projen-stack-demo/QueueRecorder/HelloLamdaFunctionDemo/ServiceRole/ImportServiceRole",
-                        "constructInfo": {
-                          "fqn": "aws-cdk-lib.Resource",
-                          "version": "2.87.0"
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "projen-stack-demo/CognitoAuthorizer/UserPoolDemo/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Cognito::UserPool",
+                      "aws:cdk:cloudformation:props": {
+                        "accountRecoverySetting": {
+                          "recoveryMechanisms": [
+                            {
+                              "name": "verified_phone_number",
+                              "priority": 1
+                            },
+                            {
+                              "name": "verified_email",
+                              "priority": 2
+                            }
+                          ]
+                        },
+                        "adminCreateUserConfig": {
+                          "allowAdminCreateUserOnly": false
+                        },
+                        "autoVerifiedAttributes": [
+                          "email"
+                        ],
+                        "emailVerificationMessage": "The verification code to your new account is {####}",
+                        "emailVerificationSubject": "Verify your new account",
+                        "smsVerificationMessage": "The verification code to your new account is {####}",
+                        "usernameAttributes": [
+                          "email"
+                        ],
+                        "userPoolName": "chatbot",
+                        "verificationMessageTemplate": {
+                          "defaultEmailOption": "CONFIRM_WITH_CODE",
+                          "emailMessage": "The verification code to your new account is {####}",
+                          "emailSubject": "Verify your new account",
+                          "smsMessage": "The verification code to your new account is {####}"
                         }
-                      },
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_cognito.CfnUserPool",
+                      "version": "2.87.0"
+                    }
+                  },
+                  "WebClient": {
+                    "id": "WebClient",
+                    "path": "projen-stack-demo/CognitoAuthorizer/UserPoolDemo/WebClient",
+                    "children": {
                       "Resource": {
                         "id": "Resource",
-                        "path": "projen-stack-demo/QueueRecorder/HelloLamdaFunctionDemo/ServiceRole/Resource",
+                        "path": "projen-stack-demo/CognitoAuthorizer/UserPoolDemo/WebClient/Resource",
                         "attributes": {
-                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:type": "AWS::Cognito::UserPoolClient",
                           "aws:cdk:cloudformation:props": {
-                            "assumeRolePolicyDocument": {
-                              "Statement": [
-                                {
-                                  "Action": "sts:AssumeRole",
-                                  "Effect": "Allow",
-                                  "Principal": {
-                                    "Service": "lambda.amazonaws.com"
-                                  }
-                                }
-                              ],
-                              "Version": "2012-10-17"
+                            "userPoolId": {
+                              "Ref": "CognitoAuthorizerUserPoolDemo39ACD195"
                             },
-                            "managedPolicyArns": [
-                              {
-                                "Fn::Join": [
-                                  "",
-                                  [
-                                    "arn:",
-                                    {
-                                      "Ref": "AWS::Partition"
-                                    },
-                                    ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
-                                  ]
-                                ]
-                              }
+                            "allowedOAuthFlows": [
+                              "implicit",
+                              "code"
+                            ],
+                            "allowedOAuthFlowsUserPoolClient": true,
+                            "allowedOAuthScopes": [
+                              "profile",
+                              "phone",
+                              "email",
+                              "openid",
+                              "aws.cognito.signin.user.admin"
+                            ],
+                            "callbackUrLs": [
+                              "https://example.com"
+                            ],
+                            "clientName": "chatbotapp",
+                            "explicitAuthFlows": [
+                              "ALLOW_USER_PASSWORD_AUTH",
+                              "ALLOW_ADMIN_USER_PASSWORD_AUTH",
+                              "ALLOW_CUSTOM_AUTH",
+                              "ALLOW_USER_SRP_AUTH",
+                              "ALLOW_REFRESH_TOKEN_AUTH"
+                            ],
+                            "supportedIdentityProviders": [
+                              "COGNITO"
                             ]
                           }
                         },
                         "constructInfo": {
-                          "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                          "fqn": "aws-cdk-lib.aws_cognito.CfnUserPoolClient",
                           "version": "2.87.0"
                         }
                       }
                     },
                     "constructInfo": {
-                      "fqn": "aws-cdk-lib.aws_iam.Role",
-                      "version": "2.87.0"
-                    }
-                  },
-                  "Code": {
-                    "id": "Code",
-                    "path": "projen-stack-demo/QueueRecorder/HelloLamdaFunctionDemo/Code",
-                    "children": {
-                      "Stage": {
-                        "id": "Stage",
-                        "path": "projen-stack-demo/QueueRecorder/HelloLamdaFunctionDemo/Code/Stage",
-                        "constructInfo": {
-                          "fqn": "aws-cdk-lib.AssetStaging",
-                          "version": "2.87.0"
-                        }
-                      },
-                      "AssetBucket": {
-                        "id": "AssetBucket",
-                        "path": "projen-stack-demo/QueueRecorder/HelloLamdaFunctionDemo/Code/AssetBucket",
-                        "constructInfo": {
-                          "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                          "version": "2.87.0"
-                        }
-                      }
-                    },
-                    "constructInfo": {
-                      "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                      "version": "2.87.0"
-                    }
-                  },
-                  "Resource": {
-                    "id": "Resource",
-                    "path": "projen-stack-demo/QueueRecorder/HelloLamdaFunctionDemo/Resource",
-                    "attributes": {
-                      "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
-                      "aws:cdk:cloudformation:props": {
-                        "code": {
-                          "s3Bucket": {
-                            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
-                          },
-                          "s3Key": "f3ef11d19937aaede26911725c37949e4a2832eb64dadb26a3cf16de9cc7f27d.zip"
-                        },
-                        "role": {
-                          "Fn::GetAtt": [
-                            "QueueRecorderHelloLamdaFunctionDemoServiceRole3C30EE94",
-                            "Arn"
-                          ]
-                        },
-                        "functionName": "HelloProjen",
-                        "handler": "index.handler",
-                        "runtime": "python3.8"
-                      }
-                    },
-                    "constructInfo": {
-                      "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                      "fqn": "aws-cdk-lib.aws_cognito.UserPoolClient",
                       "version": "2.87.0"
                     }
                   }
                 },
                 "constructInfo": {
-                  "fqn": "aws-cdk-lib.aws_lambda.Function",
+                  "fqn": "aws-cdk-lib.aws_cognito.UserPool",
                   "version": "2.87.0"
                 }
               }
