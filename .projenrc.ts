@@ -19,4 +19,8 @@ const project = new awscdk.AwsCdkConstructLibrary({
   // packageName: undefined,  /* The "name" in package.json. */
 });
 
+const common_exclude = ['cdk.out', 'cdk.context.json'];
+project.npmignore!.exclude(...common_exclude);
+project.gitignore!.exclude(...common_exclude);
+
 project.synth();
