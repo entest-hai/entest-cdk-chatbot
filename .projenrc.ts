@@ -10,8 +10,8 @@ const project = new awscdk.AwsCdkConstructLibrary({
   repositoryUrl: 'https://github.com/entest-hai/entest-cdk-chatbot.git',
   peerDeps: ['aws-cdk-lib', 'constructs'],
   publishToPypi: {
-    distName: 'entest-cdk-chatbot',
-    module: 'entest_cdk_chatbot',
+    distName: 'entest-cognito-userpool',
+    module: 'entest_cognito_userpool',
   },
   // deps: [],                /* Runtime dependencies of this module. */
   // description: undefined,  /* The description is just a string that helps people understand the purpose of the package. */
