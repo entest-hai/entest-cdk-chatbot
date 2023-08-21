@@ -1,10 +1,19 @@
 import * as cdk from 'aws-cdk-lib';
-import { QueueRecorder } from './index';
+import { CognitoAuthorizer } from './index';
 
-const app = new cdk.App();
+export class IntegTesting {
+  readonly stack: cdk.Stack;
 
-const stack = new cdk.Stack(app, 'projen-stack-demo');
+  constructor() {
+    const app = new cdk.App();
 
-new QueueRecorder(stack, 'QueueRecorder', {
-  functionName: 'HelloProjen',
-});
+    const stack = new cdk.Stack(app, 'projen-stack-demo');
+
+    new CognitoAuthorizer(stack, 'CognitoAuthorizer', {
+      userPoolName: 'chatbot',
+      userPoolClientName: 'chatbotapp',
+    });
+
+    this.stack = stack;
+  }
+}

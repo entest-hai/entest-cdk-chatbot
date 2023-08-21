@@ -115,8 +115,8 @@
     "outdir": "dist",
     "targets": {
       "python": {
-        "distName": "entest-cdk-chatbot",
-        "module": "entest_cdk_chatbot"
+        "distName": "entest-cognito-userpool",
+        "module": "entest_cognito_userpool"
       }
     },
     "tsc": {

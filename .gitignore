@@ -51,3 +51,5 @@ junit.xml
 .jsii
 tsconfig.json
 !/API.md
+cdk.out
+cdk.context.json
