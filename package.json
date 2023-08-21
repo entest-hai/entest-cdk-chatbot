@@ -2,7 +2,7 @@
   "name": "entest-cdk-chatbot",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hai/entest-cdk-chatbot.git"
+    "url": "https://github.com/entest-hai/entest-cdk-chatbot.git"
   },
   "scripts": {
     "build": "npx projen build",
@@ -53,7 +53,7 @@
     "jsii-pacmak": "^1.87.0",
     "jsii-rosetta": "~5.0.0",
     "npm-check-updates": "^16",
-    "projen": "^0.72.17",
+    "projen": "^0.72.18",
     "standard-version": "^9",
     "ts-jest": "^29.1.1",
     "ts-node": "^10.9.1",
@@ -68,7 +68,7 @@
   ],
   "main": "lib/index.js",
   "license": "Apache-2.0",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "jest": {
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.ts?(x)",
